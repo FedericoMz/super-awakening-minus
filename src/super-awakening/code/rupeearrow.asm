@@ -4,15 +4,15 @@ SuperAwakening_QuickRestock::
     ; Skip if we have powder
     ld   a, [wMagicPowderCount]
     cp $00
-    jp nz, .return
+    jp .return
     ; Skip if we have the toadstool
     ld   a, [wHasToadstool]
     cp $00
-    jp nz, .return
+    jp .return
     ; Check if we have rupees
     ld a, [wRupeeCountLow]
     cp $00
-    jp nz, .Powder_Purchase
+    jp .return
     ld a, [wRupeeCountHigh]
     cp $00
     jp nz, .Powder_Purchase
@@ -38,11 +38,11 @@ SuperAwakening_QuickRestock::
     ; Skip if we have powder
     ld   a, [wArrowCount]
     cp $00
-    jp nz, .return
+    jp .return
     ; Check if we have rupees
     ld a, [wRupeeCountLow]
     cp $00
-    jp nz, .Arrow_Purchase
+    jp .return
     ld a, [wRupeeCountHigh]
     cp $00
     jp nz, .Arrow_Purchase
@@ -61,11 +61,11 @@ SuperAwakening_QuickRestock::
     ; Skip if we have powder
     ld   a, [wBombCount]
     cp $00
-    jp nz, .return
+    jp .return
     ; Check if we have rupees
     ld a, [wRupeeCountLow]
     cp $00
-    jp nz, .Bomb_Purchase
+    jp .return
     ld a, [wRupeeCountHigh]
     cp $00
     jp nz, .Bomb_Purchase
